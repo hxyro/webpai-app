@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen&family=Oxygen+Mono&display=swap');
+:root {
+  --black: #090625;
+  --gray: #696685;
+  --gray2: #8986a5;
+  --black2: #292645;
+  --dkblue: #0d314b;
+  --plum: #4b0d49;
+  --hotmag: #ff17e4;
+  --magenta: #e310cb;
+  --aqua: #86fbfb;
+  --white: #f7f8fa;
+  --font-size: 1.3rem;
+  --mono: 'Oxygen mono', monospace;
+  --sans: Oxygen, sans-serif;
+}
+/* border box model: https://css-tricks.com/box-sizing/ */
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: var(--sans);
+  background-color: var(--black);
+  color: var(--white);
+  font-size: var(--font-size);
+}
+
+h1,
+h2,
+h3,
+button,
+a,
+p,
+img {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.thread-input {
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+}
+
+input::placeholder {
+  color: var(--gray);
+  letter-spacing: 2px;
+}
+
+input:focus {
+  outline: none;
+}
+
+.input-thread {
+  letter-spacing: 1px;
+  height: 45px;
+  width: auto;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: 0;
+  border-radius: 12px;
+  display: block;
+  color: var(--white);
+  background: var(--black2);
+}
+
+.Join-button {
+  height: 45px;
+  border: 0;
+  width: auto;
+  margin: 20px auto;
+  padding-left: 40px;
+  padding-right: 40px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: var(--white);
+  background: -webkit-linear-gradient(right, #00fff4, #e700ff);
+  animation: gradient-animation 4s ease infinite;
+  font-size: 18px;
+  font-weight: bold;
+  background-size: 100%;
+}
+
+.logo-container {
+  position: fixed;
+  width: 100%;
+  height: 350px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  z-index: -1;
+}
+
+.logo {
+  position: fixed;
+  margin: 92px auto;
+  position: fixed;
+  width: 150px;
+  height: 150px;
+  z-index: -1;
+}
+
+.ring {
+  height: 340px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: flex-start;
+  align-items: center;
+}
+
+.center {
+  margin: 0 auto;
+}
+
+.outer-ring {
+  position: fixed;
+  left: calc(50% - 150px);
+  height: 300px;
+  width: 300px;
+  background-image: linear-gradient(
+    135deg,
+    #feed07 0%,
+    #fe6a50 5%,
+    #ed00aa 15%,
+    #2fe3fe 50%,
+    #8900ff 100%
+  );
+  border-radius: 50%;
+  animation-duration: 2s;
+  animation-name: rotate;
+  animation-iteration-count: infinite;
+  z-index: -3;
+}
+
+.inner-ring {
+  position: fixed;
+  left: calc(50% - 140px);
+  height: 280px;
+  width: 280px;
+  background-image: linear-gradient(0deg, var(--black), var(--black));
+  border-radius: 50%;
+  z-index: -3;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.sub-container {
+  width: 400px;
+  margin: 30px auto;
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+}
+
+.sub-container h3 {
+  color: var(--gray);
+  font-weight: bold;
+}
+
+.Popular-button {
+  height: 45px;
+  border: 0;
+  width: auto;
+  margin: 10px 25px;
+  padding-left: 40px;
+  padding-right: 40px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: var(--white);
+  background: -webkit-linear-gradient(left, #ff00ff, #090625);
+  font-size: 18px;
+  font-weight: bold;
+  background-size: 100%;
+}
+.Popular-button-container {
+  margin: 30px auto;
+  max-width: 300;
+  height: 100px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.connect-wallet {
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 5;
+  backdrop-filter: blur(10px);
+}
+
+.meta-mask-logo {
+  position: fixed;
+  margin: 92px auto;
+  position: fixed;
+  width: 150px;
+  height: 150px;
+  z-index: -1;
+}
+.meta-mask-button {
+  margin: 400px auto;
+  height: 55px;
+  border: 0;
+  padding: 0 40px 0 40px;
+  border-radius: 15px;
+  cursor: pointer;
+  background: -webkit-linear-gradient(right, #00fff4, #e700ff);
+  color: var(--white);
+  font-size: 22px;
+  font-weight: bold;
+  background-size: 100%;
+}
+
+.connected-page {
+  width: 100%;
+  height: 100%;
+}
+
+.chat-container {
+  display: grid;
+  justify-content: center;
+}
+
+.message-container {
+  max-width: 450px;
+  height: auto;
+  margin: 20px auto;
+  display: block;
+  border-radius: 15px;
+  background: var(--black2);
+}
+
+.message-container img {
+  max-width: 400px;
+}
+.editor-container {
+  margin: 0 auto;
+  display: block;
+}
