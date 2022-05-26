@@ -20,7 +20,7 @@ const useManageMessage = () => {
   const [signer] = useSigner()
   const provider = useProvider()
   const contract = wagmi.useContract({
-    addressOrName: '0x5FbDB2315678afecb367f032d93F642f64180aa3',
+    addressOrName: '0xeB74284c58401278e99c7EB223569d90a7138b45',
     contractInterface: WebpaiContract.abi,
     signerOrProvider: signer.data || provider,
   })

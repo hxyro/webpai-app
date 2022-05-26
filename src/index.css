@@ -1,9 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Oxygen&family=Oxygen+Mono&display=swap');
 :root {
   --black: #090625;
+  --black2: #292645;
+  --black3: #393655;
   --gray: #696685;
   --gray2: #8986a5;
-  --black2: #292645;
+  --gray3: #494665;
+  --gray4: #a9a6c5;
   --dkblue: #0d314b;
   --plum: #4b0d49;
   --hotmag: #ff17e4;
@@ -46,6 +49,16 @@ img {
 
 a {
   text-decoration: none;
+  color: var(--aqua);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+p,
+a,
+img {
+  word-wrap: break-word;
 }
 
 .thread-input {
@@ -247,18 +260,235 @@ input:focus {
 }
 
 .message-container {
-  max-width: 450px;
+  width: 310px;
   height: auto;
   margin: 20px auto;
   display: block;
   border-radius: 15px;
   background: var(--black2);
+  font-family: var(--sans);
 }
 
 .message-container img {
-  max-width: 400px;
+  padding: 5px;
+  max-width: 300px;
+  max-height: 300px;
 }
+
+.user-name {
+  display: flex;
+  justify-content: start;
+  background: var(--black3);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  color: var(--gray4);
+}
+
+.user-name span {
+  margin: 10px 10px 10px auto;
+  color: var(--gray2);
+  font-size: 20px;
+}
+
+.user-name p:first-child {
+  font-size: 20px;
+  margin: 7px;
+}
+
+#message {
+  margin: 10px;
+  font-size: 23px;
+  color: var(--gray4);
+}
+.user-avatar {
+  margin-top: 20px;
+  width: 50px;
+  height: 50px;
+}
+
+.message-box {
+  display: flex;
+  justify-content: center;
+}
+
+.ipfs-file-button {
+  margin: 10px;
+  height: 35px;
+  border: 0;
+  padding: 0 30px 0 30px;
+  border-radius: 15px;
+  cursor: pointer;
+  background: var(--gray4);
+  color: var(--white);
+  font-size: 22px;
+  font-weight: bold;
+  background-size: 100%;
+}
+.ipfs-file-container {
+  display: flex;
+  justify-content: center;
+}
+
+.ipfs-file-button a {
+  color: var(--gray3);
+}
+
 .editor-container {
-  margin: 0 auto;
+  position: fixed;
+  bottom: 5px;
+  width: 100%;
+  margin: 15px auto;
+  display: flex;
+  justify-content: center;
+}
+
+.editor {
+  width: 410px;
+  background: var(--black2);
+  border-radius: 15px;
+}
+
+.main-textarea {
+  display: flex;
+  justify-content: center;
+}
+.main-textarea textarea {
+  margin-top: 10px;
+  width: 95%;
+  border-radius: 10px;
+  letter-spacing: 1px;
+  height: 45px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  border: 0;
   display: block;
+  font-family: var(--sans);
+  color: var(--gray4);
+  background: var(--black);
+}
+
+textarea:focus {
+  outline: none;
+}
+button:focus {
+  outline: none;
+}
+textarea::placeholder {
+  color: var(--gray);
+  font-family: var(--sans);
+}
+textarea {
+  resize: none;
+}
+
+.send-button-container {
+  display: flex;
+  justify-content: end;
+  width: 100%;
+}
+
+.send-button {
+  margin: 10px;
+  height: 35px;
+  border: 0;
+  padding: 0 30px 0 30px;
+  border-radius: 15px;
+  cursor: pointer;
+  background: var(--gray4);
+  color: var(--white);
+  font-size: 22px;
+  font-weight: bold;
+  background-size: 100%;
+}
+
+.send-button2 {
+  margin: 10px auto 10px 10px;
+  height: 35px;
+  border: 0;
+  padding: 0 10px 0 10px;
+  border-radius: 15px;
+  cursor: pointer;
+  background: var(--gray4);
+  color: var(--white);
+  font-size: 22px;
+  font-weight: bold;
+  background-size: 100%;
+}
+
+.space-container {
+  width: 100%;
+  height: 220px;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+.embed-container {
+  width: 100%;
+  padding: 5px;
+}
+
+.embed {
+  border-radius: 15px;
+}
+
+@media (min-width: 850px) {
+  .message-container {
+    width: 700px;
+  }
+  .message-container img {
+    padding: 20px;
+    max-width: 650px;
+    max-height: 650px;
+  }
+  .editor {
+    width: 500px;
+  }
+  .embed-container {
+    padding: 20px;
+  }
+}
+.home {
+  font-size: 20px;
+  margin: 10px;
+  height: 35px;
+  border: 0;
+  padding: 0 20px 0 20px;
+  border-radius: 15px;
+  cursor: pointer;
+  background: -webkit-linear-gradient(right, var(--gray2), var(--black2));
+  color: var(--white);
+  font-size: 22px;
+  font-weight: bold;
+  background-size: 100%;
+}
+
+.home-container {
+  top: 0;
+  position: fixed;
+  width: 100%;
+  display: flex;
+  flex-flow: flex-start;
+}
+.switch {
+  font-size: 20px;
+  margin: 10px 10px 10px auto;
+  height: 35px;
+  border: 0;
+  padding: 0 20px 0 20px;
+  border-radius: 15px;
+  cursor: pointer;
+  background: -webkit-linear-gradient(right, var(--gray2), var(--black2));
+  color: var(--white);
+  font-size: 22px;
+  font-weight: bold;
+  background-size: 100%;
+}
+
+.switch img {
+  padding: 5px 0 0 0;
+  width: 20px;
+  height: 23px;
 }
