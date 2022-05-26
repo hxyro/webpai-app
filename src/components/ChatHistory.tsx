@@ -12,12 +12,18 @@ const ChatHistory: React.FunctionComponent<MessageProps> = ({ topic }) => {
   const query = useMessages({ topic })
   useEvents({ topic })
   return (
-    <div>
+    <div className='chat-container'>
       {query.isLoading && <h2>Loading......</h2>}
-      {query.data?.map((i) => (
-        <Message key={i.id} message={i} />
-      ))}
-      {query.isFetched && <MessageEditor topic={topic} />}
+      <div>
+        {query.data?.map((i) => (
+          <div>
+            <Message key={i.id} message={i} />
+          </div>
+        ))}
+      </div>
+      <div className='editor-container'>
+        {query.isFetched && <MessageEditor topic={topic} />}
+      </div>
     </div>
   )
 }
