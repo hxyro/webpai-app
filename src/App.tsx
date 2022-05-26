@@ -6,7 +6,7 @@ import { Provider as WagmiProvider } from 'wagmi'
 import { QueryClient, QueryClientProvider, QueryCache } from 'react-query'
 import { providers } from 'ethers'
 
-const provider = providers.getDefaultProvider('http://localhost:8545')
+const provider = providers.getDefaultProvider('https://polygon-rpc.com')
 
 const queryClient = new QueryClient({
   defaultOptions: {
