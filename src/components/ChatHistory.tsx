@@ -1,4 +1,3 @@
-import * as React from 'react'
 import useMessages from '../hooks/useMessage'
 import Message from './Message'
 import MessageEditor from './MessageEditor'
@@ -21,6 +20,7 @@ const ChatHistory: React.FunctionComponent<MessageProps> = ({ topic }) => {
           </div>
         ))}
       </div>
+      <div className='space-container'></div>
       <div className='editor-container'>
         {query.isFetched && <MessageEditor topic={topic} />}
       </div>
