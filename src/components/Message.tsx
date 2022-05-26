@@ -9,14 +9,16 @@ interface MessageProps {
 
 const Message: React.FunctionComponent<MessageProps> = ({ message }) => {
   return (
-    <div>
-      ========================================================================
+    <div className='message-container'>
+      <div>=====================</div>
       <p>
         [user: {truncateMiddle(message.creator_address || '', 5, 2, '..')}]:
         {'  '}
         {message.message}
       </p>
-      <div>[file: ]: {`https://${message.ipfsid}.ipfs.dweb.link`}</div>
+      <div>
+        [file: ]: <a href={`https://${message.ipfsid}.ipfs.dweb.link`}>file</a>
+      </div>
       <div>
         <img
           src={`https://${message.ipfsid}.ipfs.dweb.link`}
