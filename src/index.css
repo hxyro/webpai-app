@@ -262,7 +262,7 @@ input:focus {
 }
 
 .message-container {
-  width: 310px;
+  width: 330px;
   height: auto;
   margin: 20px auto;
   display: block;
@@ -273,8 +273,8 @@ input:focus {
 
 .message-container img {
   padding: 5px;
-  max-width: 300px;
-  max-height: 300px;
+  max-width: 320px;
+  max-height: 320px;
 }
 
 .user-name {
@@ -345,7 +345,7 @@ input:focus {
 }
 
 .editor {
-  width: 410px;
+  width: 400px;
   background: var(--black2);
   border-radius: 15px;
 }
