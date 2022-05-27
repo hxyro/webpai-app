@@ -2,6 +2,12 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 //@ts-ignore
 import PopLogo from '../assets/pop.png'
+//@ts-ignore
+import TWT from '../assets/twitter.svg'
+//@ts-ignore
+import GITHUB from '../assets/github.svg'
+//@ts-ignore
+import MAIL from '../assets/mail.svg'
 
 const Home = () => {
   const [value, setValue] = useState('')
@@ -54,6 +60,25 @@ const Home = () => {
           </Link>
         </div>
       </div>
+      <div className='gradient'></div>
+
+      <footer>
+        <a href={`https://twitter.com/hxyro0`}>
+          <button className='footer-button'>
+            <img src={TWT} alt='logo' />
+          </button>
+        </a>
+        <a href={`https://github.com/hxyro`}>
+          <button className='footer-button'>
+            <img src={GITHUB} alt='logo' />
+          </button>
+        </a>
+        <a href={`mailto:shubhamvyas1691@gmail.com`}>
+          <button className='footer-button'>
+            <img src={MAIL} alt='logo' />
+          </button>
+        </a>
+      </footer>
     </div>
   )
 }

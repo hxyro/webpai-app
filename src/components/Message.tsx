@@ -34,11 +34,6 @@ const Message: React.FunctionComponent<MessageProps> = ({ message }) => {
             <span>
               {i.includes('https://') ? (
                 <div key={i}>
-                  <span>
-                    <a href={i}>
-                      <p>{i} </p>
-                    </a>
-                  </span>
                   <>
                     {!i.includes('tenor.com') ? (
                       i.endsWith('.jpg') ? (
@@ -54,7 +49,11 @@ const Message: React.FunctionComponent<MessageProps> = ({ message }) => {
                       ) : i.endsWith('.webp') ? (
                         Pusharr(i)
                       ) : (
-                        <></>
+                        <span>
+                          <a href={i}>
+                            <p>{i} </p>
+                          </a>
+                        </span>
                       )
                     ) : (
                       <></>

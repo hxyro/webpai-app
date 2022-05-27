@@ -1,11 +1,31 @@
 import { useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import ChatHistory from './ChatHistory'
+import { useEffect, useState } from 'react'
+import { toast, ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 //@ts-ignore
 import polygonLogo from '../assets/polygonlogo.png'
 
-function Thread() {
-  const { ethereum } = window
+const Thread = () => {
+  const [chainId, setChainId] = useState(true)
+  const ethereum: any = window.ethereum
+  useEffect(() => {
+    const getChainId = async () => {
+      if (ethereum) {
+        const cid = await ethereum.request({ method: 'eth_chainId' })
+        if (cid === '0x89') {
+          setChainId(false)
+        } else {
+          toast.error('Switch to polygon mainnet', {
+            theme: 'dark',
+            position: 'bottom-right',
+          })
+        }
+      }
+    }
+    getChainId()
+  }, [ethereum])
 
   const Network = async () => {
     if (ethereum) {
@@ -45,11 +65,22 @@ function Thread() {
         <Link to='/'>
           <button className='home'>Home</button>
         </Link>
-        <button className='switch' onClick={Network}>
-          <img alt='Network logo' src={polygonLogo} /> switch
-        </button>
+        {chainId ? (
+          <button
+            className='switch'
+            onClick={() => {
+              Network()
+              window.location.reload()
+            }}
+          >
+            <img alt='Network logo' src={polygonLogo} /> switch
+          </button>
+        ) : (
+          <></>
+        )}
       </div>
       <ChatHistory topic={id || 'main'} />
+      <ToastContainer />
     </div>
   )
 }
