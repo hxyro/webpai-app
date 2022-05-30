@@ -10,7 +10,7 @@
 
 
 ![1.png](./src/assets/ss/1.png)
-![2.png](./src/assets/ss/1.png)
+![2.png](./src/assets/ss/2.png)
 
 
 smart-contract repo: [webpai-smart-contract](https://github.com/hxyro/webpai-smart-contract)
